@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro - Resultado</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+<body>
+  <h1>Relatório de Cadastro</h1>
+  <div ng-init="dadosPessoais = ['nome', 'cpf', 'email', 'endereco', 'bairro', 'cidade', 'uf', 'cep', 'nascimento']"></div>
+  <div ng-init="dadosContato = ['celular']"></div>
+  <div ng-init="dadosCadastro = ['login']"></div>
+
+  <div ng-repeat="campo in dadosPessoais">
+    <p ng-if="$location.search()[campo]"><strong>{{ campo }}:</strong> {{ $location.search()[campo] }}</p>
+  </div>
+  
+  <div ng-repeat="campo in dadosContato">
+    <p ng-if="$location.search()[campo]"><strong>{{ campo }}:</strong> {{ $location.search()[campo] }}</p>
+  </div>
+  
+  <div ng-repeat="campo in dadosCadastro">
+    <p ng-if="$location.search()[campo]"><strong>{{ campo }}:</strong> {{ $location.search()[campo] }}</p>
+  </div>
+</body>
+</html>
